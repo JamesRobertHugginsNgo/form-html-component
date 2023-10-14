@@ -1,0 +1,21 @@
+{
+  "name": "form-html-component",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node form-html-component-test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.51.0",
+    "make-html-string": "github:JamesRobertHugginsNgo/make-html-string"
+  },
+  "dependencies": {
+    "get-id": "github:JamesRobertHugginsNgo/get-id#1.0.0",
+    "html-component": "github:JamesRobertHugginsNgo/html-component#2.0.1"
+  }
+}
