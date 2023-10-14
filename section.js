@@ -1,7 +1,6 @@
 import getId from 'get-id';
-import { registerHtmlComponent } from 'html-component';
 
-registerHtmlComponent('section', {
+export default {
 	build({
 		id = getId('section-'),
 		title,
@@ -10,18 +9,33 @@ registerHtmlComponent('section', {
 		return {
 			htmlStringDefinition: {
 				name: 'div',
-				attributes: { id },
+				attributes: {
+					class: 'section',
+					id
+				},
 				children: [
 					title ? {
 						name: 'h2',
-						attributes: { id: `${id}-heading` },
+						attributes: {
+							class: 'section-title',
+							id: `${id}-heading`
+						},
 						children: [title]
 					} : null,
-					...fields
+
+					{
+						name: 'div',
+						attributes: {
+							class: 'section-body'
+						},
+						children: [
+							fields
+						]
+					}
 				]
 			},
 			initializer: { id }
 		};
 	},
 	initialize() { }
-});
+};

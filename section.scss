@@ -1,0 +1,20 @@
+.section {
+	border: 1px solid #cccccc;
+	border-radius: 0.25rem;
+	margin-bottom: 1rem;
+	overflow: hidden;
+
+	.section-title {
+		background-color: #eeeeee;
+		border-bottom: 1px solid #cccccc;
+		color: #000000;
+		font-size: 1rem;
+		font-weight: 500;
+		margin: 0;
+		padding: 0.5rem 0.75rem;
+	}
+
+	.section-body {
+		padding: 0 0.75rem 1rem 0.75rem;
+	}
+}

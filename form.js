@@ -1,7 +1,6 @@
 import getId from 'get-id';
-import { registerHtmlComponent } from 'html-component';
 
-registerHtmlComponent('form', {
+export default {
 	build({
 		id = getId('form-'),
 		title,
@@ -10,18 +9,36 @@ registerHtmlComponent('form', {
 		return {
 			htmlStringDefinition: {
 				name: 'form',
-				attributes: { id },
+				attributes: {
+					class: 'form',
+					id
+				},
 				children: [
 					title ? {
 						name: 'h1',
-						attributes: { id: `${id}-heading` },
+						attributes: {
+							class: 'form-title',
+							id: `${id}-heading`
+						},
 						children: [title]
 					} : null,
-					...sections
+					sections,
+					{
+						name: 'div',
+						children: [
+							{
+								name: 'button',
+								attributes: {
+									type: 'submit'
+								},
+								children: ['Submit']
+							}
+						]
+					}
 				]
 			},
 			initializer: { id }
 		};
 	},
 	initialize() { }
-});
+};
